@@ -1,0 +1,456 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require main
+*= require mobile
+*= require_self
+*/
+/* MODIFICHE GAC */
+/* modificato per allargare al massimo */
+body {
+    margin: 0 auto;
+    max-width: 1960px;
+}
+
+/* modificato per evitare la sottolineatura */
+/* modificato per avere il bold */
+a:link, a:visited, a:hover {
+    color: #4444dd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+#grailsLogo {
+    background-color: #ff0000;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#grailsLogo a {
+    margin: 0.1em 0 0 0.5em;
+}
+
+.footer {
+    background: #ff0000;
+    color: #000;
+    clear: both;
+    font-size: 0.8em;
+    margin-top: 1.5em;
+    padding: 1em;
+    min-height: 1em;
+}
+
+.footer a {
+    color: #ff0000;
+}
+
+/* NAVIGATION MENU */
+.nav a.edit {
+    background-image: url(../images/skin/database_edit.png);
+}
+
+.nav a.login {
+    background-position: 0.7em center;
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    background-image: url(../images/skin/arrow_in.png);
+}
+
+.nav a.logout {
+    background-position: 0.7em center;
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    background-image: url(../images/skin/arrow_out.png);
+}
+
+.nav a.tabellonePrima {
+    background-position: 0.7em center;
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    background-image: url(../images/skin/date_previous.png);
+}
+
+.nav a.tabelloneLunedi {
+    background-position: 0.7em center;
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    background-image: url(../images/skin/date_go.png);
+}
+
+.nav a.tabelloneOggi {
+    background-position: 0.7em center;
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    background-image: url(../images/skin/date.png);
+}
+
+.nav a.tabelloneDopo {
+    background-position: 0.7em center;
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    background-image: url(../images/skin/date_next.png);
+}
+
+.nav a.viaggio {
+    background-position: 0.7em center;
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    background-image: url(../images/skin/car.png);
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+    overflow: auto; /* IE always renders vertical scrollbar without this */
+    vertical-align: top;
+}
+
+
+/* MESSAGES AND ERRORS */
+.errors {
+    background: transparent url(../images/skin/exclamation.png) 0.5em 50% no-repeat;
+    text-indent: 2.2em;
+}
+
+
+/* TABLES */
+table {
+    margin-bottom: 0em;
+}
+
+thead th {
+    background-color: #ff0000;
+    white-space: nowrap;
+    color: #444444;
+}
+
+th {
+    background-color: #ff0000;
+    background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #eaeaea));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#ffffff', EndColorStr = '#eaeaea');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
+    color: #444444;
+    font-weight: bold;
+    line-height: 1.7em;
+    padding: 0.2em 0.6em;
+}
+
+thead th {
+    background-color: #ff0000;
+    white-space: nowrap;
+    color: #444444;
+}
+
+th a:link, th a:visited {
+    color: #444444;
+}
+
+/* ACTION BUTTONS */
+.buttons .list {
+    background-image: url(../images/skin/database_table.png);
+}
+
+.topbanner {
+    height: 60px;
+    background-color: #dddfff;
+    color: #fffff0;
+}
+
+.buttons input.tabellonePrima {
+    background: transparent url(../images/skin/database_table.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.tabelloneDopo {
+    background: transparent url(../images/skin/database_table.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.menuButton a.tabellonePrima {
+    background: url(../images/skin/database_table.png) center left no-repeat;
+    color: #555;
+    padding-left: 25px;
+}
+
+.menuButton a.tabelloneDopo {
+    background: url(../images/skin/database_table.png) center left no-repeat;
+    color: #555;
+    padding-left: 25px;
+}
+
+.topbanner {
+    height: 60px;
+    background-color: #dddfff;
+    color: #fffff0;
+}
+
+.buttons input.tabellonePrima {
+    background: transparent url(../images/skin/database_table.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.tabelloneDopo {
+    background: transparent url(../images/skin/database_table.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.menuButton a.tabellonePrima {
+    background: url(../images/skin/database_table.png) center left no-repeat;
+    color: #555;
+    padding-left: 25px;
+}
+
+.menuButton a.tabelloneDopo {
+    background: url(../images/skin/database_table.png) center left no-repeat;
+    color: #555;
+    padding-left: 25px;
+}
+
+
+/* Titolo pagina */
+th.titoloimmagine, th.titolocroce, th.titolologin {
+    padding-left: 0px;
+    line-height: 1.3em;
+    vertical-align: middle;
+    background: #ff0000;
+    background-color: #ff0000;
+    color: #000000;
+}
+
+th.titoloimmagine {
+    width: 20px;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+th.titolocroce {
+    font-size: 1.4em;
+    text-align: left;
+}
+
+th.titolologin {
+    font-size: 0.7em;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* TABELLONE */
+/* Titoli */
+th.titolilegenda, th.titoligiorni {
+    line-height: 1.2em;
+    background: #ff0000;
+    background-color: #ff0000;
+    color: #000000;
+}
+
+th.titolilegenda {
+    text-align: center;
+}
+
+th.titoligiorni {
+    text-align: left;
+}
+
+/* Corpo */
+td.legendatipo, td.legendatipoodd, td.legendatipoeven,
+td.legendafunzione, td.legendaorario, td.turnoorario,
+td.turnovuoto, td.turnoprevisto, td.turnoassegnato, td.turnolibero,
+td.turnocritico, td.turnobloccato, td.turnoeffettuato {
+    line-height: 0.3em;
+}
+
+/* Legenda (a sinistra) */
+td.legendatipo, td.legendatipoodd, td.legendatipoeven, {
+    line-height: 1em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+td.legendatipo {
+    background: #dddddd;
+}
+
+td.legendatipoodd {
+    background: #f7f7f7;
+}
+
+td.legendatipooddbordo {
+    background: #f7f7f7;
+    border-width: 0 0 4px 0;
+    padding: 4px;
+    border-style: solid;
+    border-color: blue;
+}
+
+td.legendatipoeven {
+    background: #ffffff;
+}
+
+td.legendafunzione {
+    text-align: left;
+    background: #cccccc;
+}
+
+td.legendaorario {
+    text-align: left;
+    background: #ffdddd;
+}
+
+/* Turni (a destra) */
+td.turnoorario {
+    background: #ffeeee;
+}
+
+td.turnovuoto, td.turnoprevisto, td.turnoassegnato, td.turnolibero,
+td.turnocritico, td.turnobloccato, td.turnoeffettuato {
+    border-width: 1px;
+    border-style: solid;
+    border-color: blue;    border-collapse: collapse;
+}
+
+td.turnovuoto {
+    background: #eeeeee;
+}
+
+td.turnoprevisto {
+    background: #e1f2b6;
+}
+
+td.turnoassegnato {
+    background: #44ff44;
+}
+
+td.turnolibero {
+    background: #fcefa1;
+}
+
+td.turnocritico {
+    background: #ff4444;
+}
+
+td.turnobloccato {
+    background: #4444ff;
+}
+
+td.turnoeffettuato {
+    background: #aaaaaa;
+}
+
+td.bordo {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    height: 4px;
+    background: #0000ff;
+}
+
+
+td.tab {
+    line-height: 0.5em;
+    background-color: #0000ff;
+    color: #ff0000;
+}
+
+.buttonamb {
+    display: block;
+    height: 20px;
+    width: 80px;
+    background: #4444ff;
+}
+
+td.footerlegenda {
+    vertical-align: middle;
+}
+
+td.footercella {
+    border-style: solid;
+    border-collapse: collapse;
+    border-width: 0 0 0 0;
+    border-style: solid;
+    border-color: blue;
+    vertical-align: middle;
+}
+
+table.formtable {
+    background: #a9f5a9;
+    width: 800px;
+}
+
+td.formlabelleft, td.formlabelright, td.formeditleft, td.formeditright, td.formlegenda {
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+td.formlabelleft {
+    text-align: left;
+}
+
+td.formlabelright {
+    text-align: right;
+}
+
+td.formeditleft {
+    text-align: left;
+    font-weight: bold;
+}
+
+td.formeditright {
+    text-align: right;
+    font-weight: bold;
+}
+
+td.formlegenda {
+    font-size: 0.8em;
+    color: #ff0000;
+}
+
+.formnote {
+    width: 300px;
+    height: 100px;
+}
+
+.formcaption {
+    color: #339966;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+}
+
+table.amb {
+    border-width: 2px;
+    border-spacing: 3px;
+    border-style: solid;
+    border-color: blue;
+    border-collapse: collapse;
+    background-color: rgb(255, 250, 250);
+}
+
+td.copyright {
+    /*background: #339966;*/
+    /*background: #ff4444;*/
+    background: red;
+    color: #ffffff;
+    font-size: 0.7em;
+    font-weight: normal;
+    vertical-align: middle;
+    padding: 2px;
+}
+
+td.verde {
+    color: green;
+    font-weight: bold;
+}
+
+td.rosso {
+    color: red;
+    font-weight: bold;
+}
+
