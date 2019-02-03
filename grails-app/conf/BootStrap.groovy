@@ -533,6 +533,26 @@ class BootStrap implements Cost {
             nuoviTurni2018Fidenza()
         }// fine del blocco if
 
+        //--aggiornamento costante Cost.ANNI
+        if (installaVersione(106)) {
+            newVersione(CROCE_ALGOS, '2019', 'Uletriore aggiornamento costante Cost.ANNI')
+        }// fine del blocco if
+
+        //--creazione nuovi turni anno 2018 per Pianoro
+        if (installaVersione(107)) {
+            nuoviTurni2019Pianoro()
+        }// fine del blocco if
+
+        //--creazione nuovi turni anno 2018 per Ponte Taro
+        if (installaVersione(108)) {
+            nuoviTurni2019CRPT()
+        }// fine del blocco if
+
+        //--creazione nuovi turni anno 2018 per Fidenza
+        if (installaVersione(109)) {
+            nuoviTurni2019Fidenza()
+        }// fine del blocco if
+
         // resetTurniPontetaro()
 
         //--cancella tutto il database
@@ -5225,6 +5245,29 @@ class BootStrap implements Cost {
         nuoviTurniAnnualiFidenza('2018')
         newVersione(CROCE_ROSSA_FIDENZA, 'Turni', 'Creati turni vuoti 2018')
     }// fine del metodo
+
+
+    //--creazione nuovi turni anno 2019 per Pianoro
+    //--li crea SOLO se non esistono già
+    private static void nuoviTurni2019Pianoro() {
+        nuoviTurniAnnualiPianoro('2019')
+        newVersione(CROCE_PUBBLICA_PIANORO, 'Turni', 'Creati turni vuoti 2019')
+    }// fine del metodo
+
+    //--creazione nuovi turni anno 2019 per Ponte Taro
+    //--li crea SOLO se non esistono già
+    private static void nuoviTurni2019CRPT() {
+        nuoviTurniAnnualiPontetaro('2019')
+        newVersione(CROCE_ROSSA_PONTETARO, 'Turni', 'Creati turni vuoti 2019')
+    }// fine del metodo
+
+    //--creazione nuovi turni anno 2019 per Fidenza
+    //--li crea SOLO se non esistono già
+    private static void nuoviTurni2019Fidenza() {
+        nuoviTurniAnnualiFidenza('2019')
+        newVersione(CROCE_ROSSA_FIDENZA, 'Turni', 'Creati turni vuoti 2019')
+    }// fine del metodo
+
 
     //--aggiunto flag per creazione 'al volo' nuovi turni
     //--di default falso per tutte le croci
