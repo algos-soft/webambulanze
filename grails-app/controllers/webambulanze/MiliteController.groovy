@@ -89,6 +89,7 @@ class MiliteController {
         def campiLista = [
                 'cognome',
                 'nome',
+                'attivo',
                 'telefonoCellulare',
                 'scadenzaBLSD',
                 'scadenzaTrauma',

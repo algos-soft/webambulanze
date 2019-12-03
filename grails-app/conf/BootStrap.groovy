@@ -538,19 +538,34 @@ class BootStrap implements Cost {
             newVersione(CROCE_ALGOS, '2019', 'Uletriore aggiornamento costante Cost.ANNI')
         }// fine del blocco if
 
-        //--creazione nuovi turni anno 2018 per Pianoro
+        //--creazione nuovi turni anno 2019 per Pianoro
         if (installaVersione(107)) {
             nuoviTurni2019Pianoro()
         }// fine del blocco if
 
-        //--creazione nuovi turni anno 2018 per Ponte Taro
+        //--creazione nuovi turni anno 2019 per Ponte Taro
         if (installaVersione(108)) {
             nuoviTurni2019CRPT()
         }// fine del blocco if
 
-        //--creazione nuovi turni anno 2018 per Fidenza
+        //--creazione nuovi turni anno 2019 per Fidenza
         if (installaVersione(109)) {
             nuoviTurni2019Fidenza()
+        }// fine del blocco if
+
+        //--creazione nuovi turni anno 2020 per Pianoro
+        if (installaVersione(110)) {
+            nuoviTurni2020Pianoro()
+        }// fine del blocco if
+
+        //--creazione nuovi turni anno 2020 per Ponte Taro
+        if (installaVersione(111)) {
+            nuoviTurni2020CRPT()
+        }// fine del blocco if
+
+        //--creazione nuovi turni anno 2020 per Fidenza
+        if (installaVersione(112)) {
+            nuoviTurni2020Fidenza()
         }// fine del blocco if
 
         // resetTurniPontetaro()
@@ -4473,7 +4488,7 @@ class BootStrap implements Cost {
         TipoTurno msa2sera = TipoTurno.findByCroceAndSigla(croce, PAP_TIPO_TURNO_SABDOM_SERA)
 
 
-        for (int k = 31; k < 365; k++) {
+        for (int k = 0; k < 365; k++) {
             giorno = primoGennaio + k
             if (Lib.isFerialeAnno(giorno, Festivi.all(anno))) {
                 Lib.creaTurno(croce, msanotte, giorno)
@@ -5268,6 +5283,27 @@ class BootStrap implements Cost {
         newVersione(CROCE_ROSSA_FIDENZA, 'Turni', 'Creati turni vuoti 2019')
     }// fine del metodo
 
+
+    //--creazione nuovi turni anno 2020 per Pianoro
+    //--li crea SOLO se non esistono già
+    private static void nuoviTurni2020Pianoro() {
+        nuoviTurniAnnualiPianoro('2020')
+        newVersione(CROCE_PUBBLICA_PIANORO, 'Turni', 'Creati turni vuoti 2020')
+    }// fine del metodo
+
+    //--creazione nuovi turni anno 2020 per Ponte Taro
+    //--li crea SOLO se non esistono già
+    private static void nuoviTurni2020CRPT() {
+        nuoviTurniAnnualiPontetaro('2020')
+        newVersione(CROCE_ROSSA_PONTETARO, 'Turni', 'Creati turni vuoti 2020')
+    }// fine del metodo
+
+    //--creazione nuovi turni anno 2020 per Fidenza
+    //--li crea SOLO se non esistono già
+    private static void nuoviTurni2020Fidenza() {
+        nuoviTurniAnnualiFidenza('2020')
+        newVersione(CROCE_ROSSA_FIDENZA, 'Turni', 'Creati turni vuoti 2020')
+    }// fine del metodo
 
     //--aggiunto flag per creazione 'al volo' nuovi turni
     //--di default falso per tutte le croci
