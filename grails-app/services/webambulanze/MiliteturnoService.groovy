@@ -189,7 +189,7 @@ class MiliteturnoService {
      * @param inizio del periodo da considerare - di solito il 1° gennaio
      * @param fine del periodo da considerare:
      *      la data corrente per l'anno in corso
-     *      il 31 dicmbre per gli anni passati
+     *      il 31 dicembre per gli anni passati
      */
     private static void ricalcolaMiliteTurno(Croce croce, Date inizio, Date fine) {
         ArrayList listaTurni
@@ -371,7 +371,7 @@ class MiliteturnoService {
      * @param inizio del periodo da considerare - di solito il 1° gennaio
      * @param fine del periodo da considerare:
      *      la data corrente per l'anno in corso
-     *      il 31 dicmbre per gli anni passati
+     *      il 31 dicembre per gli anni passati
      */
     private void ricalcolaMiliteStatistiche(Croce croce, String anno, Date inizio, Date fine) {
         Militestatistiche militestatistiche
@@ -418,7 +418,7 @@ class MiliteturnoService {
                     oreFunz = it.ore + (int) mappaSiglaFunzioni.get(siglaFunzione)
                     mappaSiglaFunzioni.put(siglaFunzione, oreFunz)
                 }// fine del blocco if
-                if (it.giorno < dataCorrente) {
+                if (it.giorno <= dataCorrente) {
                     ultimoTurno = it.giorno
                 }// fine del blocco if
             } // fine del ciclo each

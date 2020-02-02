@@ -17,7 +17,7 @@ public interface Cost {
 
     //--anni di utilizzo del programma per le statistiche
     //--il 2012 è farlocco e serve per dare più credibilità al programma
-    public static String[] ANNI = ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']
+    public static String[] ANNI = ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019','2020']
 
     //--alcune sigle di croci per operazioni selettive
     public static String CROCE_ALGOS = 'ALGOS'

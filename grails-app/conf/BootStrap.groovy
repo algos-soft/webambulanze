@@ -568,6 +568,10 @@ class BootStrap implements Cost {
             nuoviTurni2020Fidenza()
         }// fine del blocco if
 
+        //--aggiornamento costante Cost.ANNI
+        if (installaVersione(113)) {
+            newVersione(CROCE_ALGOS, '2020', 'Ulteriore aggiornamento costante Cost.ANNI')
+        }// fine del blocco if
         // resetTurniPontetaro()
 
         //--cancella tutto il database

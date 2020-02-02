@@ -1135,6 +1135,7 @@ class AmbulanzaTagLib {
                 testoOut += '<h2>Moduli disponibili al programmatore:</h2>'
                 testoOut += Lib.tagController('Versione', 'Lista versioni installate')
                 testoOut += Lib.tagController('Militestatistiche', 'Forza calcolo statistiche', 'calcola')
+                testoOut += Lib.tagController('Militestatistiche', 'Patch CRPT', 'calcola2019CRPT')
                 testoOut += Lib.tagController('Turno', 'Lista turni (non tabellone)', 'list')
             }// fine del blocco if
             if (militeService.isLoggatoCustodeOrMore()) {
@@ -1746,7 +1747,7 @@ class AmbulanzaTagLib {
 //        testo = 'Algos© - 5.29 del 19 marzo 2018'
 //        testo = 'Algos© - 5.30 del 4 febbraio 2019'
 //        testo = 'Algos© - 5.31 del 3 febbraio 2019'
-        testo = 'Algos© - 5.32 del 3 dicembre 2019'
+        testo = 'Algos© - 5.33 del 3 gennaio 2020'
         testo = Lib.tagCella(testo, Aspetto.copyright)
         testoOut = Lib.tagTable(testo)
         return testoOut

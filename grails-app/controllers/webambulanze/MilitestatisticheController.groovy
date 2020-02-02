@@ -30,7 +30,7 @@ class MilitestatisticheController {
     def croceService
     def utenteService
 
-    private static String ANNO_CORRENTE = '2019'
+    private static String ANNO_CORRENTE = '2020'
     private String anno = ANNO_CORRENTE
 
     def index() {
@@ -77,13 +77,18 @@ class MilitestatisticheController {
         redirect(action: 'list', params: params)
     } // fine del metodo
 
+    def anno2020() {
+        params.anno = '2020'
+        redirect(action: 'list', params: params)
+    } // fine del metodo
+
     def list(int max) {
         def lista = null
         Croce croce = croceService.getCroce(request)
         Milite milite
         ArrayList menuExtra
         HashMap mappa = new HashMap()
-        String titoloLista = "Turni effettuati dai militi nell'anno 2019"
+        String titoloLista = "Turni effettuati dai militi nell'anno 2020"
         mappa.put('titolo', 'nomignolo')
         mappa.put('campo', 'database')
 
@@ -365,9 +370,25 @@ class MilitestatisticheController {
         redirect(action: 'list', params: params)
     } // fine del metodo
 
-    def calcola2019() {
-        Croce croce = croceService.getCroce(request)
+    //--patch
+    def calcola2019CRPT() {
+        Croce croce = Croce.findBySigla(Cost.CROCE_ROSSA_PONTETARO)
         String anno = Cost.ANNI[7]
+        Date inizio
+        Date fine
+
+        if (croce) {
+            inizio = Lib.creaData1Gennaio(anno)
+            fine = Lib.creaDataOggi()
+            militeturnoService.calcola(croce, anno, inizio, fine)
+        }// fine del blocco if
+        utenteService.regolaAbilitazioni()
+        redirect(action: 'list', params: params)
+    } // fine del metodo
+
+    def calcola2020() {
+        Croce croce = croceService.getCroce(request)
+        String anno = Cost.ANNI[8]
         Date inizio
         Date fine
 
@@ -492,7 +513,7 @@ class MilitestatisticheController {
 
     public static int deleteLink(Milite milite) {
         int status = 0 //indeterminato
-        def listaStatistiche  = Militestatistiche.findAllByMilite(milite)
+        def listaStatistiche = Militestatistiche.findAllByMilite(milite)
 
         if (listaStatistiche.isEmpty()) {
             status = 1 //non esiste
