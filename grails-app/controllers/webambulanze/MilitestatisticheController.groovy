@@ -379,7 +379,7 @@ class MilitestatisticheController {
 
         if (croce) {
             inizio = Lib.creaData1Gennaio(anno)
-            fine = Lib.creaDataOggi()
+            fine = Lib.creaData31Dicembre(anno)
             militeturnoService.calcola(croce, anno, inizio, fine)
         }// fine del blocco if
         utenteService.regolaAbilitazioni()
