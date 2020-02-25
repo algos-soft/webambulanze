@@ -1,12 +1,7 @@
 package webambulanze
 
 import grails.plugin.springsecurity.annotation.Secured
-import org.springframework.context.ApplicationContext
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
-import org.springframework.security.core.userdetails.UserCache
-import org.springframework.security.core.userdetails.UserDetails
-import org.springframework.security.core.userdetails.UserDetailsService
 
 import javax.servlet.http.Cookie
 
@@ -55,10 +50,18 @@ class AccessoController {
         boolean primaVolta
         boolean mostraTabellonePartenza = false
         boolean isTabelloneSecured = true
+        String tag = "gac"
+        boolean developer = false
 
         def abc = params
         if (params.siglaCroce) {
             possibileSiglaCroce = params.siglaCroce
+
+            if (possibileSiglaCroce.startsWith(tag)) {
+                possibileSiglaCroce = possibileSiglaCroce.substring(tag.length())
+                developer = true
+            }// end of if cycle
+
             if (possibileSiglaCroce.contains(spazioVuoto)) {
                 possibileSiglaCroce = possibileSiglaCroce.substring(0, possibileSiglaCroce.indexOf(spazioVuoto))
             }// fine del blocco if
@@ -74,6 +77,30 @@ class AccessoController {
             render(view: '/error')
             return
         }// fine del blocco if-else
+
+        if (!developer && siglaCroce.equalsIgnoreCase("gaps")) {
+            flash.errors = "La croce $possibileSiglaCroce, è stata spostata. Usa 'gaps.algos.biz'";
+            render(view: '/error')
+            return
+        }// end of if cycle
+
+//        if (!developer && siglaCroce.equalsIgnoreCase("crf")) {
+//            flash.errors = "La croce $possibileSiglaCroce, è stata spostata. Usa 'crf.algos.biz'";
+//            render(view: '/error')
+//            return
+//        }// end of if cycle
+
+//        if (!developer && siglaCroce.equalsIgnoreCase("crpt")) {
+//            flash.errors = "La croce $possibileSiglaCroce, è stata spostata. Usa 'crpt.algos.biz'";
+//            render(view: '/error')
+//            return
+//        }// end of if cycle
+
+//        if (!developer && siglaCroce.equalsIgnoreCase("pap")) {
+//            flash.errors = "La croce $possibileSiglaCroce, è stata spostata. Usa 'pap.algos.biz'";
+//            render(view: '/error')
+//            return
+//        }// end of if cycle
 
         //--regolazioni generali
         primaVolta = selezionaCroceBase(siglaCroce)
