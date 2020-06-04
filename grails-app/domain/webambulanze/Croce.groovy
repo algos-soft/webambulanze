@@ -38,6 +38,7 @@ class Croce {
     //--note
     String note
 
+    boolean valida = true;
     /**
      * regolazione delle proprietà di ogni campo
      * l'ordine con cui vengono elencati qui, viene rispettato nella lista e nella scheda standard

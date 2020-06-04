@@ -78,11 +78,17 @@ class AccessoController {
             return
         }// fine del blocco if-else
 
-        if (!developer && siglaCroce.equalsIgnoreCase("gaps")) {
-            flash.errors = "La croce $possibileSiglaCroce, è stata spostata. Usa 'gaps.algos.biz'";
+        if (!developer && !croce.valida) {
+            flash.errors = "La croce "+possibileSiglaCroce+" è stata spostata. Usa '"+possibileSiglaCroce+".algos.biz'";
             render(view: '/error')
             return
         }// end of if cycle
+
+//        if (!developer && siglaCroce.equalsIgnoreCase("gaps")) {
+//            flash.errors = "La croce $possibileSiglaCroce, è stata spostata. Usa 'gaps.algos.biz'";
+//            render(view: '/error')
+//            return
+//        }// end of if cycle
 
 //        if (!developer && siglaCroce.equalsIgnoreCase("crf")) {
 //            flash.errors = "La croce $possibileSiglaCroce, è stata spostata. Usa 'crf.algos.biz'";
